@@ -1,0 +1,41 @@
+<!-- navbar.component.html -->
+<nav class="w-full top-0 flex z-50 items-center justify-between pt-4 bg-white shadow-md fixed">
+
+  <!-- Logo Section -->
+  <div class="grid items-center cursor-pointer">
+    <img src="logo.svg" alt="logo" (click)="navigateToHome()">
+  </div>
+
+  <!-- Search Bar -->
+  <mat-form-field class="mx-4 rounded-lg h-12 w-[30rem]">
+    <mat-icon matPrefix>search</mat-icon>
+    <input matInput type="text" placeholder="Search for Products, Brands and More" class="bg-transparent bg-[#f0f5ff]" />
+  </mat-form-field>
+
+  <!-- Actions -->
+  <div class="flex items-center pr-12">
+    <a mat-button class="hover:text-blue-600 px-6">
+      <mat-icon>person</mat-icon>
+      <div class=" inline-block z-10  ml-2 align-super">
+        <a href="" class="focus:outline-none">
+          Login
+          <!-- <mat-icon class="align-middle">expand_more</mat-icon> -->
+        </a>
+      </div>
+    </a>
+
+    <button mat-button class="px-6 hover:text-blue-600" (click)="RouteToCart()">
+      <mat-icon aria-hidden="false" matBadge="{{ cartCount() }}">shopping_cart</mat-icon> 
+      <span class="align-top ml-2">Cart</span>
+    </button>
+
+    <button mat-button class="px-6 hover:text-blue-600" (click)="navigateToOrders()">
+      <mat-icon>storefront</mat-icon> 
+      <span class="align-top ml-2">My Orders</span>
+    </button>
+
+    <button mat-icon-button class="px-6 hover:text-blue-600">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </div>
+</nav>
